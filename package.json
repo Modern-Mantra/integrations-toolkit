@@ -1,11 +1,13 @@
 {
   "name": "@modern-mantra/integrations-toolkit",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "A toolkit for connecting and integrating core Modern Mantra technologies, such as Notion, Slack, and Gmail",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "esbuild --bundle --platform=node --target=node12 --outdir=dist --format=cjs services/index.ts",
+    "build:types": "tsc --declaration --emitDeclarationOnly --outDir dist",
+    "build:js": "esbuild services/index.ts --bundle --platform=node --target=node12 --format=cjs --outdir=dist",
+    "build": "npm run build:types && npm run build:js",
     "prepublishOnly": "npm run build"
   },
   "repository": {
@@ -31,6 +33,7 @@
   },
   "devDependencies": {
     "@types/aws-lambda": "^8.10.110",
-    "esbuild": "^0.17.5"
+    "esbuild": "^0.17.5",
+    "esbuild-plugin-tsc": "^0.3.1"
   }
 }
