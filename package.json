@@ -1,24 +1,36 @@
 {
-  "name": "hr-system-integrations",
+  "name": "@modern-mantra/integrations-toolkit",
   "version": "1.0.0",
-  "description": "Shared library for HR system integrations with Notion and Slack",
-  "main": "index.js",
+  "description": "A toolkit for connecting and integrating core Modern Mantra technologies, such as Notion, Slack, and Gmail",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "esbuild --bundle --platform=node --target=node12 --outdir=dist --format=cjs src/index.ts",
+    "prepublishOnly": "npm run build"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/modern-mantra/hr-system-integrations.git"
+    "url": "https://github.com/modern-mantra/integrations-toolkit.git"
   },
-  "author": "Your Name",
-  "license": "ISC",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "keywords": [
+    "integrations",
+    "toolkit",
+    "notion",
+    "slack",
+    "gmail"
+  ],
+  "author": "",
+  "license": "MIT",
   "dependencies": {
     "@notionhq/client": "^2.2.3",
-    "@slack/web-api": "^6.8.1"
+    "@slack/web-api": "^6.8.1",
+    "googleapis": "^100.0.0"
   },
   "devDependencies": {
     "@types/aws-lambda": "^8.10.110",
-    "esbuild": "^0.17.5",
-    "typescript": "^5.0.4"
+    "esbuild": "^0.17.5"
   }
 }
