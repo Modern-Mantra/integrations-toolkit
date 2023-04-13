@@ -1,6 +1,6 @@
 {
   "name": "@modern-mantra/integrations-toolkit",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A toolkit for connecting and integrating core Modern Mantra technologies, such as Notion, Slack, and Gmail",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
