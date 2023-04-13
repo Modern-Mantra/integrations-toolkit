@@ -5,7 +5,7 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "esbuild --bundle --platform=node --target=node12 --outdir=dist --format=cjs src/index.ts",
+    "build": "esbuild --bundle --platform=node --target=node12 --outdir=dist --format=cjs services/index.ts",
     "prepublishOnly": "npm run build"
   },
   "repository": {
